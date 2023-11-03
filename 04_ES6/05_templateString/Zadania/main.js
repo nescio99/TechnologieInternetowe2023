@@ -17,11 +17,11 @@ const person = {
     profession: "Lord of Wallachia"
 };
 
-function whoAreYou(data) {
+function whoAreYou({name, lastName, yearOfBirth: year, profession}) {
 const printText =
-`My name is ${data.name} ${data.lastName}.
-I am ${new Date().getFullYear() - data.yearOfBirth} years old.
-My profession is ${data.profession}.`;
+`My name is ${name} ${lastName}.
+I am ${new Date().getFullYear() - year} years old.
+My profession is ${profession}.`;
     return printText;
 }
 

@@ -1,23 +1,35 @@
-//Zadanie 1
+//Zadanie 3
 
-const weather = [ "snow", "rain", "sun" ];
+const names = ["Grzegorz", "Marcin", "Bonawentura"];
+const [name1, name2, name3] = names;
+console.log(name1, name2, name3);
 
-//const snow = weather[0];
-//const sun = weather[2];
-const [snow,,sun] = weather;
+//Zadanie 4
 
-console.log(snow, "to nowy snow :)");
-console.log(sun);
-
-
-//Zadanie 2
-const slider = {
-    type: "infinite",
-    numberOfItems: 10,
-    center: true,
-    autoStart: true
+const generateRandomNumbers = () => {
+    function randomIntFromInterval(min, max) { // min and max included
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    const numbers = [];
+    for (let i = 0; i < 6; i++) {
+        numbers.push(randomIntFromInterval(0,5))
+    }
+    console.log(numbers);
+    return numbers;
 }
 
-const {type, autoStart } = slider;
-console.log(type, "type");
-console.log(autoStart, "autoStart");
+const [first, , third] = generateRandomNumbers();
+console.log(first, third);
+
+//Zadanie 5
+
+const cat = {
+    name: "Mruczek",
+    age: 10,
+    getVoice: () => "miau miau"
+};
+const showAnimal = ({name, age : catAge, getVoice}) => {
+    return `Kot ${name} ma ${catAge} lat i robi ${getVoice()}.`;
+}
+
+console.log(showAnimal(cat));
