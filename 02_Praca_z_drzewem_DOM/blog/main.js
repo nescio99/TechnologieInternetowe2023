@@ -60,3 +60,22 @@ logo.addEventListener("click", function() {
         this.style.borderStyle = "";
     }
 })
+
+//Zadanie 2 style
+const formBtn = document.querySelector(".form-button");
+formBtn.addEventListener("click", () => {
+    form.classList.add("hide");
+    const info = document.createElement("p");
+    info.textContent = "Wiadomość została wysłana";
+    info.classList.add("about-blog__content-title");
+    form.after(info);
+})
+
+//Zadanie 3 style
+
+const laos = document.querySelector(".first-article__text-title");
+laos.addEventListener("mouseenter", function () {
+    this.style.color = "red";
+    document.querySelector(".first-article__photo").style.backgroundImage
+        = "url(./img/kowal.png)";
+});

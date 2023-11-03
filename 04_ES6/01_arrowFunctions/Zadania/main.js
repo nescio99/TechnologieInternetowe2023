@@ -41,3 +41,30 @@ const runInterval = (n = 8) => {
 // runInterval(3);
 
 runInterval();
+
+//Zadanie 3
+
+const generateLinks = (tab) => {
+    return tab.map((el) => `https://${el}.com` )
+}
+
+const addresses = ["google", "twitter", "facebook"];
+console.table(generateLinks(addresses));
+
+const newUl = document.createElement("ul");
+newUl.setAttribute("id", "menu");
+document.querySelector("body").append(newUl);
+const menu = document.querySelector("#menu");
+
+const insertLinks = (arr, container) => {
+    arr.forEach(el => {
+        const newLi = document.createElement("li");
+        const newA = document.createElement("a");
+        newA.textContent = el;
+        newA.href = el;
+        newLi.append(newA);
+        container.append(newLi);
+    });
+}
+
+insertLinks(generateLinks(addresses), menu);
