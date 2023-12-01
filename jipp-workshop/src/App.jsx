@@ -5,8 +5,11 @@ import ImageUrl from "./components/Chapter02/ImageUrl";
 import RGBBoxes from "./components/Chapter02/RGBBoxes";
 import Hello from "./components/Chapter05/Hello";
 import CurrencyConverter from "./components/Chapter05/CurrencyConverter";
-import './App.css';
 import ParentComponent from "./components/Chapter06/ParentComponent.jsx";
+import ShopItem from "./components/Chapter06/ShopItem.jsx";
+import product from "./data/product.js";
+import './App.css';
+import HelloWorld from "./components/Chapter07/HelloWorld.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -57,6 +60,8 @@ function App() {
         <ParentComponent>
             <p>Hej</p>
         </ParentComponent>
+        <ShopItem product={product} />
+        <HelloWorld />
     </>
   )
 }
