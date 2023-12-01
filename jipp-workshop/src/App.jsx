@@ -10,6 +10,7 @@ import ShopItem from "./components/Chapter06/ShopItem.jsx";
 import product from "./data/product.js";
 import './App.css';
 import HelloWorld from "./components/Chapter07/HelloWorld.jsx";
+import Modal from "./components/Chapter07/Modal.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -62,6 +63,7 @@ function App() {
         </ParentComponent>
         <ShopItem product={product} />
         <HelloWorld />
+        <Modal heading="Zapisz się do newslettera"/>
     </>
   )
 }
