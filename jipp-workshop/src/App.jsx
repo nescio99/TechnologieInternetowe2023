@@ -6,6 +6,7 @@ import RGBBoxes from "./components/Chapter02/RGBBoxes";
 import Hello from "./components/Chapter05/Hello";
 import CurrencyConverter from "./components/Chapter05/CurrencyConverter";
 import './App.css';
+import ParentComponent from "./components/Chapter06/ParentComponent.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -53,6 +54,9 @@ function App() {
         <Hello name="Grzegorz" surname="Kowalski" />
         <CurrencyConverter from="EUR" to="USD" value={200} rate={1.12275} />
         <CurrencyConverter from="PLN" to="USD" value={200} rate={0.25} />
+        <ParentComponent>
+            <p>Hej</p>
+        </ParentComponent>
     </>
   )
 }
