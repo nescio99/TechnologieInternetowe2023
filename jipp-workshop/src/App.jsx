@@ -13,6 +13,7 @@ import HelloWorld from "./components/Chapter07/HelloWorld.jsx";
 import Modal from "./components/Chapter07/Modal.jsx";
 import StrobeLight from "./components/Chapter07/StrobeLight.jsx";
 import Clock from "./components/Chapter07/Clock.jsx";
+import Buttons from "./components/Chapter08/Buttons.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -73,6 +74,7 @@ function App() {
         {/*<StrobeLight frequency={50} bgColor="silver" />*/}
 
         <Clock />
+        <Buttons />
     </>
   )
 }
