@@ -12,6 +12,7 @@ import './App.css';
 import HelloWorld from "./components/Chapter07/HelloWorld.jsx";
 import Modal from "./components/Chapter07/Modal.jsx";
 import StrobeLight from "./components/Chapter07/StrobeLight.jsx";
+import Clock from "./components/Chapter07/Clock.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -66,11 +67,12 @@ function App() {
         <HelloWorld />
         <Modal heading="Zapisz się do newslettera"/>
 
-        <StrobeLight frequency={500} bgColor="magenta" />
-        <StrobeLight frequency={100} bgColor="yellow" />
-        <StrobeLight frequency={200} bgColor="red" />
-        <StrobeLight frequency={50} bgColor="silver" />
+        {/*<StrobeLight frequency={500} bgColor="magenta" />*/}
+        {/*<StrobeLight frequency={100} bgColor="yellow" />*/}
+        {/*<StrobeLight frequency={200} bgColor="red" />*/}
+        {/*<StrobeLight frequency={50} bgColor="silver" />*/}
 
+        <Clock />
     </>
   )
 }
