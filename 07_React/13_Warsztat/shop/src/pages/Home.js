@@ -19,7 +19,7 @@ const Home = () => {
             <Row className={'text-center'}>
                 {
                     pens.map((el) => (
-                    <Link className={"col-3 mb-2 p-2"} to={`/product/${el.id}`} state={{ addToBasket }}>
+                    <Link className={"test col-3 mb-2 p-2 text-decoration-none"} to={`/product/${el.id}`} state={{ addToBasket }}>
                         <ProductItem data={el} key={el.id} />
                     </Link>
                 ))}

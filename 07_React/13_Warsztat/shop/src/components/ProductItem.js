@@ -12,9 +12,9 @@ const ProductItem = ({data}) => {
     }
     return (
         <Card style={{ height: '400px', color: 'black' }}>
-            <Card.Img className={'align-middle object-fit-scale'} variant="top" src={data.thumb} style={{width: '100%', height: '200px'}} />
+            <Card.Img className={'align-middle img-fixed'} variant="top" src={data.thumb} />
             <Card.Body className={'p-0'}>
-                <Card.Title className={'m-0'} style={{height: '100px'}}>{data.title}</Card.Title>
+                <Card.Title className={'m-0 lead'} style={{height: '100px'}}>{data.title}</Card.Title>
                 <Card.Text className={'m-0'} style={{height: '30px'}}>
                     Cena: {data.price} zł
                 </Card.Text>

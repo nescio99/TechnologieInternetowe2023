@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useBasketContext } from "../BasketContext";
 import { Navbar, Nav} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 const CustomNavbar = () => {
     const { basket } = useBasketContext();
@@ -14,7 +14,7 @@ const CustomNavbar = () => {
                 <Navbar.Brand className={''} href="../home"><FontAwesomeIcon icon={faPenNib} /> Strona Główna</Navbar.Brand>
                 <Nav className=" text-end">
                     <Link to={`/summary/${basket.reduce((prev, curr) => prev + curr.price, 0)}`} className="btn btn-outline-light">
-                        Koszyk ({basket.length}) - Suma: {basket.reduce((prev, curr) => prev + curr.price, 0)} zł
+                        <span><FontAwesomeIcon icon={faCartShopping} /></span> Koszyk <span className={'badge text-bg-danger'}>{basket.length}</span> - Suma: {basket.reduce((prev, curr) => prev + curr.price, 0)} zł
                     </Link>
                 </Nav>
             </div>
