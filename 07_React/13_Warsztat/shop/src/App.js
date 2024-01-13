@@ -1,48 +1,33 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// App.js
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Product from "./pages/Product";
 import Summary from "./pages/Summary";
-import {Container} from "react-bootstrap";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { useBasketContext } from "./BasketContext";
 
-const router = createBrowserRouter([
-  {
-    path: "/home",
-    element: <Home />,
-    errorElement: <ErrorPage />
-  },
-  {
-    path: "/summary/:price",
-    element: <Summary />
-  },
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <ErrorPage />
-  },
-  {
-    path: "/product/:id",
-    element: <Product />,
-    errorElement: <ErrorPage />
-  },
-]);
-function App() {
+const App = () => {
+  const { basket } = useBasketContext();
+
   return (
-        <Container>
-          <Navbar bg="primary" variant="dark">
-            <Container>
-              <Navbar.Brand href="../home">Logo</Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link href="#pricing">Koszyk</Nav.Link>
-              </Nav>
-            </Container>
-          </Navbar>
-          <RouterProvider router={router} />
-        </Container>
+      <BrowserRouter>
+      <div className={'container-fluid p-0'}>
+        <Navbar/>
+        <div className={'container'}>
+
+            <Routes>
+              <Route path="/home" element={<Home />} errorElement={<ErrorPage/>}/>
+              <Route path="/summary/:price" element={<Summary />} errorElement={<ErrorPage/>}/>
+              <Route path="/product/:id" element={<Product />} errorElement={<ErrorPage/>}/>
+              <Route path="/" element={<Home />} errorElement={<ErrorPage/>}/>
+            </Routes>
+
+        </div>
+      </div>
+      </BrowserRouter>
   );
 }
 

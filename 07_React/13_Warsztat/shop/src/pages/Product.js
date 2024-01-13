@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {CardImg} from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { useBasketContext } from "../BasketContext";
 
 const Product = () => {
     const {id} = useParams();
+    const { addToBasket } = useBasketContext();
     const [product, setProduct] = useState(null);
     useEffect(() => {
         fetch(`http://localhost:8000/products/${id}`)
@@ -28,6 +29,7 @@ const Product = () => {
                 </Card.Body>
                 <CardImg variant={"bottom"} src={product.thumb}/>
             </Card>
+            <Link to="/home">Powrót do strony głównej</Link>
         </div>
     );
 };
